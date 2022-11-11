@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include("../../partials/head.ejs")%>
+</head>
+<body>
+    <header>
+        <%-include("../../partials/header.ejs", {userdata})%>
+    </header>
+    <main class="main">
+        <div class="course">
+            <% dessert.forEach( function (dessert) {%>
+                <div class="card">
+                    <div class="mainname">
+                        <h2 class="subname"><%= dessert.name%></h2>
+                        <p class="subname"><%= dessert.description%></p>
+                    </div>
+                        <img class="image" src="<%= dessert.img %>" alt="An image of <%= dessert.name %>" />
+                    <h3>Price: $<%=dessert.price %></h3>
+                    <% if(userdata){%>
+                        <div class="cardcart">
+                            <a class="editfood" href="/foodie/<%=dessert._id%>/edit">Edit</a>
+                            <h2><a href="/foodie/cart/<%=dessert.name%>/<%=dessert.price%>">Add to Cart</a></h2>
+                            <form action="/foodie/<%=dessert._id%>?_method=DELETE" method="POST">
+                                <input class="deletefood" type="submit" value="Delete">
+                            </form>
+                        </div>
+                    <%} else { %>
+                        <h2><a class="login" href="/sessions/login">Login to add</a></h2>
+                    <% } %>
+                </div>
+            <%})%>
+        </div>
+    </main>
+    <footer>
+        <%-include("../../partials/footer.ejs")%>
+    </footer>
+</body>
+</html>

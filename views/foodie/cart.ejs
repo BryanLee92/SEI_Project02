@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include("../../partials/head.ejs")%>
+</head>
+<body>
+    <header>
+        <%-include("../../partials/header.ejs", {userdata})%>
+    </header>
+    <main class="main">
+        <% if (userdata){%>
+            <div class="container">
+                <ul>
+                <%let sum = 0%>
+                <%if(cart){%>
+                    <%for(let i = 0; i < cart.length; i++){%>
+                        <li class="cartName"><strong><%=cart[i].name%></strong></li>
+                        <li class="cartCost"><strong>$<%=cart[i].price%></strong></li>
+                        <form class="remove" action="/foodie/cart/<%=i%>?_method=DELETE" method="POST">
+                            <input class="removeButton" type="submit" value="Remove">
+                        </form>
+                    <hr>
+                    <% sum += parseInt(cart[i].price, 10) %>
+                <% } %>
+            <% } %>
+                </ul>
+                <div class="total">
+                    <h2>Total: $<%= sum %> </h2>
+                </div>
+            <form  class="checkout" action="/foodie/cart" method="POST">
+                <input class="checkoutbutton" type="submit" value="Checkout">
+            </form>
+            </div>
+        <%} else {%>
+            <form action="/sessions" method="POST">
+                <div class="form-group">
+                    <label for="username">ID Username:</label>
+                    <input type="text" name="username" id="username" required><br /><br />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" required><br /><br />
+                </div>
+                <div class="registerSubmit">
+                    <input class="submitsize" type="submit" value="Submit"><br /><br />
+                </div>
+            </form>
+            <%}%>
+    </main>
+    <footer>
+        <%-include("../../partials/footer.ejs")%>
+    </footer>
+</body>
+</html>

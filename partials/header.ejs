@@ -1,0 +1,61 @@
+<div>
+    <h1 class="h1">Foodie</h1>
+    <%if(userdata){%>
+        <h2 class="userdata"><%= userdata.username%></h2>
+        <a class="carthead"href="/sessions/<%=userdata._id%>/update"><strong>Edit</strong></a>
+        <a class="carthead"href="/foodie/cart"><strong>Cart</strong></a>
+        <a class="carthead" style="color:red" href="/foodie/product/new"><strong>[Add new Product]</strong></a>
+        <a class="logout"href="/sessions/logout/:id">Logout</a>
+        <% }else{ %>
+    <div class="a_head">
+        <h3><a class="head" href="/sessions/login">Login</a></h3>
+        <h3><a class="head" href="/foodie/signup">Signup</a></h3>
+    </div>
+        <% } %>
+</div>
+<div class="wrapper">
+    <div class="navbar">
+        <ul>
+            <li><a href="/" class="a_parent">
+                <div class="wrap">
+                    <span class="icon">
+                        <i class="fa-sharp fa-solid fa-house"></i>
+                    </span>
+                    <span class="text">Home</span>
+                </div>
+            </a></li>
+            <li><a href="/foodie/sides" class="a_parent">
+                <div class="wrap">
+                    <span class="icon">
+                        <i class="fa-sharp fa-solid fa-sandwich"></i>
+                    </span>
+                    <span class="text">Sides</span>
+                </div>
+            </a></li>
+            <li><a href="/foodie/main" class="a_parent">
+                <div class="wrap">
+                    <span class="icon">
+                        <i class="fa-sharp fa-solid fa-bowl-chopsticks-noodles"></i>
+                    </span>
+                    <span class="text">Main</span>
+                </div>
+            </a></li>
+            <li><a href="/foodie/drinks" class="a_parent">
+                <div class="wrap">
+                    <span class="icon">
+                        <i class="fa-sharp fa-solid fa-whiskey-glass-ice"></i>
+                    </span>
+                    <span class="text">Drinks</span>
+                </div>
+            </a></li>
+            <li><a href="/foodie/dessert" class="a_parent">
+                <div class="wrap">
+                    <span class="icon">
+                        <i class="fa-sharp fa-solid fa-soft-serve"></i>
+                    </span>
+                    <span class="text">Dessert</span>
+                </div>
+            </a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+{
+  "name": "project02",
+  "version": "1.0.0",
+  "engines":{
+    "node": "v16.17.0"
+  },
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.generalassemb.ly:BryanLee92/Project02.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.6.4",
+    "nodemon": "^2.0.20"
+  }
+}

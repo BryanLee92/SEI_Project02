@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include("../../partials/head.ejs")%>
+</head>
+<body>
+    <header>
+        <%-include("../../partials/header.ejs", {userdata})%>
+    </header>
+    <main class="main">
+        <% if(userdata){%>
+        <div class="container">
+           <% let order = Math.round(Math.random() * 50) %>
+            <div class="orderNum">
+                <h1>Thank You</h1><br /><br />
+                <p>Your order number will be <span class=ordercolor><strong><%=order%></strong></span>.</p>
+            </div>
+            <hr>
+            <ul>
+            <%let sum = 0%>
+            <%if(checkout){%>
+                <%for(let i = 0; i < checkout.length; i++){%>
+                    <li class="cartName"><strong><%=checkout[i].name%></strong></li>
+                    <li class="cartCost"><strong>$<%=checkout[i].price%></strong></li>
+                <hr>
+                <% sum += parseInt(checkout[i].price, 10) %>
+            <% } %>
+        <% } %>
+            </ul>
+            <div class="total">
+                <h2>Total: $<%= sum %> </h2>
+            </div>
+        </div>
+        <%}else{%>
+            <form action="/sessions" method="POST">
+                <div class="form-group">
+                    <label for="username">ID Username:</label>
+                    <input type="text" name="username" id="username" required><br /><br />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" required><br /><br />
+                </div>
+                <div class="registerSubmit">
+                    <input class="submitsize" type="submit" value="Submit"><br /><br />
+                </div>
+            </form>
+        <%}%>
+    </main>
+    <footer>
+        <%-include("../../partials/footer.ejs")%>
+    </footer>
+</body>
+</html>
