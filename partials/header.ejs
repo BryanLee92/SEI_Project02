@@ -1,11 +1,13 @@
 <div>
     <h1 class="h1">Foodie</h1>
     <%if(userdata){%>
-        <h2 class="userdata"><%= userdata.username%></h2>
-        <a class="carthead"href="/sessions/<%=userdata._id%>/update"><strong>Edit</strong></a>
-        <a class="carthead"href="/foodie/cart"><strong>Cart</strong></a>
-        <a class="carthead" style="color:red" href="/foodie/product/new"><strong>[Add new Product]</strong></a>
-        <a class="logout"href="/sessions/logout/:id">Logout</a>
+        <div class="userdata">
+            <h2 class="userdataName"><%= userdata.username%></h2>
+            <a class="carthead"href="/sessions/<%=userdata._id%>/update"><strong>Edit</strong></a>
+            <a class="carthead"href="/foodie/cart"><strong>Cart</strong></a>
+            <a class="carthead" style="color:red" href="/foodie/product/new"><strong>[Add new Product]</strong></a>
+            <a class="logout"href="/sessions/logout/:id">Logout</a>
+        </div>
         <% }else{ %>
     <div class="a_head">
         <h3><a class="head" href="/sessions/login">Login</a></h3>

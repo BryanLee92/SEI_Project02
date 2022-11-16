@@ -12,15 +12,15 @@
             <% sides.forEach( function (sides) {%>
                 <div class="card">
                     <div class="mainname">
-                        <h2 class="subname"><%= sides.name%></h2>
-                        <p class="subname"><%= sides.description%></p>
+                        <h2 class="sub-title"><%= sides.name%></h2>
+                        <p class="sub-desc"><%= sides.description%></p>
                     </div>
                         <img class="image" src="<%= sides.img %>" alt="An image of <%= sides.name %>" />
                     <h3>Price: $<%=sides.price %></h3>
                     <% if(userdata){%>
                         <div class="cardcart">
                             <a class="editfood" href="/foodie/<%=sides._id%>/edit">Edit</a>
-                            <h2><a href="/foodie/cart/<%=sides.name%>/<%=sides.price%>">Add to Cart</a></h2>
+                            <h2><a class="add" href="/foodie/cart/<%=sides.name%>/<%=sides.price%>">Add to Cart</a></h2>
                             <form action="/foodie/<%=sides._id%>?_method=DELETE" method="POST">
                                 <input class="deletefood" type="submit" value="Delete">
                             </form>

@@ -12,8 +12,8 @@
             <% drinks.forEach( function (drinks) {%>
                 <div class="card">
                     <div class="mainname">
-                        <h2 class="subname"><%= drinks.name%></h2>
-                        <p class="subname"><%= drinks.description%></p>
+                        <h2 class="sub-title"><%= drinks.name%></h2>
+                        <p class="sub-desc"><%= drinks.description%></p>
                     </div>
                         <img class="image" src="<%= drinks.img %>" alt="An image of <%= drinks.name %>" />
                     <h3>Price: $<%=drinks.price %></h3>

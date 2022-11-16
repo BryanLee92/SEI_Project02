@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* ////////////////////HEADER////////////////////////// */
 .h1{
     color: blue;
     padding-top: 20px;
@@ -13,28 +14,28 @@
     justify-content: center;
 }
 .userdata{
-    position: relative;
-    display: inline;
+    display: flex;
     text-transform: uppercase;
-    color: blue;
     margin-left: 1000px;
     margin-right: 10px;
+    margin-top: 20px;
 }
-.carthead{
-    position:relative;
-    display: inline;
+.userdata .userdataName{
     color: blue;
     margin-right: 10px;
 }
-.logout{
-    position: absolute;
-    display: inline;
+.userdata .carthead{
+    color: blue;
+    margin-right: 20px;
+}
+.userdata .logout{
     background: rgb(84, 84, 253);
     color: white;
     border:solid 1px black;
     padding: 0 10px;
     padding-top: 5px;
 }
+/* //////////////////// HEADER > LOGIN / LOGOUT ////////////////////////// */
 .a_head{
     display: flex;
     justify-content: right;
@@ -43,7 +44,7 @@
     display:block;
     margin: 0 80px
 }
-
+/* //////////////////// HEADER > NAVBAR ////////////////////////// */
 .wrapper{
     width: 100%;
     height: 100%;
@@ -68,29 +69,36 @@
     text-align: center;
     text-transform: uppercase;
 }
+/* ////////////////////HOME////////////////////////// */
 .main{
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 20px 100px;
+}
+.home{
+    margin: 20px 100px;
+    max-width: 1800px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
 }
 .intro{
-    padding-top: 50px;
-    float: left;
+    margin-top: 50px;
     width: 400px;
 }
-.title{
+.intro .title{
     color:blue;
 }
 .priority{
-    display: flex;
-    justify-content: right;
-    float: right;
     padding-top: 5px;
 }
-
+.priority img{
+    width: 750px;
+}
+/* ////////////////////CART////////////////////////// */
 .cardcart{
     display:flex;
     justify-content: center;
 }
+/* ////////////////////EDIT Food////////////////////////// */
 .editfood{
     background: white;
     color:Blue;
@@ -99,6 +107,7 @@
     margin-right: 50px;
     margin-bottom: 2px;
 }
+/* ////////////////////DELETE Food////////////////////////// */
 .deletefood{
     display:inline;
     margin-left: 50px;
@@ -107,11 +116,12 @@
     background-color: red;
     box-shadow: 11px 24px 31px 0px rgba(0,0,0,1);
 }
-
+/* ////////////////////LOGIN / REGISTER////////////////////////// */
 .form-group{
     padding-top: 25px;
     text-align: center;
 }
+/* //////////////////// SUBMIT BTN ////////////////////////// */
 .registerSubmit{
     text-align: center;
 }
@@ -120,7 +130,7 @@
     background: rgb(84, 84, 253);
     color:white;
 }
-
+/* ////////////////////FOOTER////////////////////////// */
 .footer{
     padding-top: 15px;
     padding-bottom: 15px;
@@ -133,6 +143,7 @@
     color: white;
     text-align: center;
 }
+/* /////////////// SIDES / MAIN / DRINKS / DESSERT ////////////// */
 .course{
     margin:auto;
     width: 80%;
@@ -155,26 +166,7 @@
     max-width: 100%;
     max-height: 20vmax;
 }
-.cart{
-    display: inline-block;
-    color: blue;
-    padding: 2em;
-    margin-top:15px;
-}
-.login{
-    color: blue;
-}
-.container{
-    text-transform: capitalize;
-    margin:auto;
-    width: 70%;
-    text-align: left;
-    padding: .3em;
-    margin-left: 200px;
-    margin-bottom: 50px;
-    background-color: rgba(4, 4, 247, 0.5);
-    color: white;
-}
+
 .cartName{
     display: inline-block;
     justify-content: left;
@@ -196,6 +188,27 @@
     color: red;
     background-color: rgba(255, 255, 255, 0.6);
 }
+/* //////////////////// CART ////////////////////*/
+.cart{
+    display: inline-block;
+    color: blue;
+    padding: 2em;
+    margin-top:15px;
+}
+.login{
+    color: blue;
+}
+.container{
+    text-transform: capitalize;
+    margin:auto;
+    width: 70%;
+    text-align: left;
+    padding: .3em;
+    margin-left: 200px;
+    margin-bottom: 50px;
+    background-color: rgba(4, 4, 247, 0.5);
+    color: white;
+}
 .total{
     display: flex;
     justify-content: right;
@@ -211,10 +224,211 @@
     background: blue;
     padding: 10px 60px;
 }
+/* ////////////////////CHECKOUT ////////////////////*/
 .orderNum{
     text-align: center;
     margin-top: 20px;
 }
 .ordercolor{
     color: yellow;
+}
+
+/* ------  LAPTOP ------ */
+@media screen and (max-width: 1024px) {
+    /* ////////////////////HEADER ////////////////////*/
+    .h1{
+        font-size: 40px;
+    }
+    .userdata{
+        margin-left: 300px;
+        margin-right: 10px;
+        margin-top: 20px;
+    }
+
+    /* ////////////////////HOME ////////////////////*/
+    .home{
+        margin: 10% 50px;
+    }
+    .intro{
+        flex-basis: 45%;
+    }
+    .priority img{
+        width: 400px;
+        flex-basis: 50%;
+    }
+    /* //////////////////// CART CHECKOUT ////////////////////*/
+    .container{
+        margin-left: 0;
+        width: 100%;
+    }
+    /* /////////////// SIDES / MAIN / DRINKS / DESSERT ////////////// */
+    .course{
+        margin:auto;
+        width: 100%;
+        text-align: center;
+        left: 0;
+    }
+    .card{
+        margin: 20px 150px;
+        height: 100%;
+    }
+    .image{
+        width: 230px;
+    }
+}
+
+/* ------  TABLET ------ */
+@media screen and (max-width: 768px) {
+    /* ////////////////////HEADER ////////////////////*/
+    .h1{
+        font-size: 40px;
+     }
+    .userdata{
+        margin-left: 200px;
+        margin-right: 10px;
+        margin-top: 15px;
+    }
+    /* /////////////////HEADER > LOGIN / LOGOUT /////////////////////// */
+    .a_head{
+        display: flex;
+        justify-content: center;
+    }
+    .head{
+        display:block;
+        margin: 10px 80px
+    }
+    /* /////////////////HEADER > NAVBAR /////////////////////// */
+    .navbar ul li a{
+        width: 150px;
+    }
+    /* //////////////////// CART CHECKOUT ////////////////////*/
+    .container{
+        margin-left: 0;
+        width: 100%;
+    }
+    .cartName{
+        margin: 50px 0;
+    }
+    .cartCost{
+        margin-right: 0;
+    }
+    /* ////////////////////HOME ////////////////////*/
+    .home{
+        margin: 10% 50px;
+    }
+    .intro{
+        flex-basis: 45%;
+    }
+    .priority img{
+        width: 350px;
+        flex-basis: 50%;
+    }
+    /* /////////////// SIDES / MAIN / DRINKS / DESSERT ////////////// */
+    .course{
+        width: 100%;
+        left: 0;
+    }
+    .card{
+        margin: 20px 50px;
+        height: 100%;
+    }
+    .image{
+        width: 230px;
+    }
+}
+
+/* ------  PHONES ------ */
+@media screen and (max-width: 600px) {
+    *{
+        font-size: 10px;
+
+    }
+    /* ////////////////////HEADER ////////////////////*/
+    .h1{
+        font-size: 20px;
+     }
+    .userdata{
+        margin-left: 15px;
+        margin-top: 5px;
+    }
+    .userdata .userdataName{
+        font-size: 15px;
+    }
+    .userdata .carthead{
+        font-size: 15px;
+    }
+    .userdata .logout{
+        background: rgb(84, 84, 253);
+        color: white;
+        border: solid 1px black;
+        padding: 0 5px;
+        padding-top: 10px;
+    }
+    /* /////////////////HEADER > NAVBAR /////////////////////// */
+    .navbar ul li a{
+        width: 60px;
+    }
+    /* //////////////////// CART CHECKOUT ////////////////////*/
+    .main{
+        margin: 5px;
+    }
+    .container{
+        margin-left: 0;
+        width: 100%;
+    }
+    .cartName{
+        margin: 50px 0;
+        font-size: 12px;
+    }
+    .cartCost{
+        margin-right: 0;
+    }
+    /* ////////////////////HOME ////////////////////*/
+    .home{
+        margin: 10% 20px;
+    }
+    .intro{
+        flex-basis: 100%;
+        margin: 15px;
+    }
+    .intro h1{
+        font-size: 20px;
+    }
+    .priority img{
+        width: 100%;
+        flex-basis: 100%;
+    }
+    /* /////////////// SIDES / MAIN / DRINKS / DESSERT ////////////// */
+    .course{
+        width: 100%;
+        left: 0;
+    }
+    .card{
+        margin: 10px 35px;
+        height: 100%;
+    }
+    .image{
+        width: 150px;
+    }
+    .sub-title{
+        font-size: 18px;
+    }
+     /* ////////////////////EDIT Food////////////////////////// */
+    .editfood{
+        padding: 5px 10px;
+        margin-right: 5px;
+        margin-bottom: 3px;
+        font-size: 15px;
+    }
+    /* ////////////////////DELETE Food////////////////////////// */
+    .deletefood{
+        font-size: 15px;
+        margin-left: 50px;
+        padding: 5px 10px;
+    }
+    /* ////////////////////DELETE Food////////////////////////// */
+    .add{
+        font-size: 12px;
+        margin-right: 15px;
+    }
 }

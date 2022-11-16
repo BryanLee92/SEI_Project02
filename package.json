@@ -1,10 +1,10 @@
 {
   "name": "project02",
   "version": "1.0.0",
-  "engines":{
+  "engines": {
     "node": "v16.17.0"
   },
-  "description": "",
+  "description": "<a href=\"https://young-peak-67257.herokuapp.com\"> Website to the page</a>",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

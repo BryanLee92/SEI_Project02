@@ -12,11 +12,11 @@
             <% main.forEach( function (main) {%>
                 <div class="card">
                     <div class="mainname">
-                        <h2 class="subname"><%= main.name%></h2>
-                        <p class="subname"><%= main.description%></p>
+                        <h2 class="sub-title"><%= main.name%></h2>
+                        <p class="sub-desc"><%= main.description%></p>
                     </div>
                         <img class="image" src="<%= main.img %>" alt="An image of <%= main.name %>" />
-                    <h3>Price: $<%=main.price %></h3>
+                    <h3>Price: $<%= main.price %></h3>
                     <% if(userdata){%>
                         <div class="cardcart">
                             <a class="editfood" href="/foodie/<%=main._id%>/edit">Edit</a>
