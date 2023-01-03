@@ -1,6 +1,6 @@
 # Project02
 
-<a href="https://young-peak-67257.herokuapp.com"> Website to the page</a>
+<a href="https://foodie-rb3g.onrender.com/"> Website to the page</a>
 
 <h1>Technologies used: </h1>
 <ol>
